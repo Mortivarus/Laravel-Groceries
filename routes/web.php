@@ -15,10 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\GroceryController;
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [GroceryController::class, 'index'])->name('groceries.index');
 
 Route::get('/groceries', [GroceryController::class, 'index'])->name('groceries.index');
 
@@ -31,3 +28,6 @@ Route::get('/groceries/{grocery}/edit', [GroceryController::class, 'edit'])->nam
 Route::patch('/groceries/{grocery}', [GroceryController::class, 'update'])->name('groceries.update');
 
 Route::delete('/groceries/{grocery}', [GroceryController::class, 'destroy'])->name('groceries.destroy');
+
+
+

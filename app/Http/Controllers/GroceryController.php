@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Grocery;
 
 class GroceryController extends Controller{
     public function index(){
-        return "Door de ogen van deze kraai kan ik de index zien.";
+        return view('groceries.index');
     }
 
     public function create(){
-        return "Door de vleugels van deze kraai kan ik maken.";
+        return view('groceries.create');
     }
 
     public function store(){
@@ -18,7 +19,7 @@ class GroceryController extends Controller{
     }
 
     public function edit(){
-        return "Door het verstand van deze kraai kan ik aanpassen.";
+        return view('groceries.edit');
     }
 
     public function update(){
