@@ -3,7 +3,9 @@
 
 @section('content')
 
-<form method="POST" action= <?php route('groceries.store'); ?> >
+<form method="post" action="/groceries">
+    @csrf
+
     <label for="name">Name</label><br>
     <input type="text" id="name" name="name"><br>
     <label for="price">Price</label><br>

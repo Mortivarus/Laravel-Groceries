@@ -15,15 +15,17 @@ class GroceryController extends Controller{
     }
 
     public function store(){
-        return "Door de hersenen van deze kraai kan ik opslaan.";
+        dump(request()->all());
     }
 
-    public function edit(){
-        return view('groceries.edit');
+    public function edit($id){
+        $grocery = Grocery::find($id);
+
+        return view('groceries.edit', compact('grocery'));
     }
 
-    public function update(){
-        return "Door de vermogens van deze kraai kan ik updaten.";
+    public function update($id){
+        $grocery = Grocery::find($id);
     }
 
     public function destroy(){
