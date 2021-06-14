@@ -12,7 +12,7 @@
         </tr>
     
     <?php 
-    foreach(App\Models\Grocery::all() as $item): ?>
+    foreach($groceries as $item): ?>
         <tr>
             <td><?= $item->name;  ?></td>
             <td><?= $item->price;  ?></td>
@@ -22,5 +22,10 @@
     <?php endforeach; ?>
 
     </table>
+
+
+
+
+
 
 @endsection

@@ -12,11 +12,11 @@ Edit the item
     @method('PUT')
     
     <label for="name">Name</label><br>
-    <input type="text" id="name" name="name"><br>
+    <input type="text" id="name" name="name" value="{{ $grocery->name }}"><br>
     <label for="price">Price</label><br>
-    <input type="text" id="price" name="price"><br>
+    <input type="text" id="price" name="price" value="{{ $grocery->price }}"><br>
     <label for="number">Amount</label><br>
-    <input type="number" id="number" name="number" min="1" max="100"><br>
+    <input type="number" id="number" name="number" min="1" max="100" value="{{ $grocery->number }}"><br>
     <input type="submit">
 </form>
 @endsection

@@ -25,7 +25,7 @@ Route::post('/groceries', [GroceryController::class, 'store'])->name('groceries.
 
 Route::get('/groceries/{grocery}/edit', [GroceryController::class, 'edit'])->name('groceries.edit');
 
-Route::patch('/groceries/{grocery}', [GroceryController::class, 'update'])->name('groceries.update');
+Route::put('/groceries/{grocery}', [GroceryController::class, 'update'])->name('groceries.update');
 
 Route::delete('/groceries/{grocery}', [GroceryController::class, 'destroy'])->name('groceries.destroy');
 

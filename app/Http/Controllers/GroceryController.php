@@ -7,7 +7,9 @@ use App\Models\Grocery;
 
 class GroceryController extends Controller{
     public function index(){
-        return view('groceries.index');
+        $groceries = Grocery::latest()->get();
+
+        return view('groceries.index', ['groceries' => $groceries]);
     }
 
     public function create(){
@@ -15,17 +17,38 @@ class GroceryController extends Controller{
     }
 
     public function store(){
-        dump(request()->all());
+        request()->validate([
+            'name' => 'required',
+            'number' => 'required',
+            'price' => 'required'
+        ]);
+
+        // $grocery = new Grocery();
+
+        // $grocery->name = request('name');
+        // $grocery->number = request('number');
+        // $grocery->price = request('price');
+
+        // $grocery->save();
+
+        Grocery::create([
+            'name' => request('name'),
+            'number' => request('number'),
+            'price' => request('price')
+        ]);
+
+        $groceries = Grocery::latest()->get();
+        return view('groceries.index', ['groceries' => $groceries]);        
     }
 
-    public function edit($id){
-        $grocery = Grocery::find($id);
+    public function edit(Grocery $grocery){
+        $grocery = Grocery::findOrFail($grocery);
 
         return view('groceries.edit', compact('grocery'));
     }
 
-    public function update($id){
-        $grocery = Grocery::find($id);
+    public function update(Grocery $grocery){
+        $grocery = Grocery::findOrFail($grocery);
     }
 
     public function destroy(){

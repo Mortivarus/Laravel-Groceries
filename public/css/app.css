@@ -18,3 +18,7 @@ th{
 #number, #totalCost, #total{
     text-align: right;
 }
+
+.is-danger{
+    color:red;
+}
