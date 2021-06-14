@@ -7,9 +7,7 @@ use App\Models\Grocery;
 
 class GroceryController extends Controller{
     public function index(){
-        $groceries = Grocery::latest()->get();
-
-        return view('groceries.index', ['groceries' => $groceries]);
+        return view('groceries.index');
     }
 
     public function create(){
@@ -37,8 +35,7 @@ class GroceryController extends Controller{
             'price' => request('price')
         ]);
 
-        $groceries = Grocery::latest()->get();
-        return view('groceries.index', ['groceries' => $groceries]);        
+        return view('groceries.index');
     }
 
     public function edit(Grocery $grocery){

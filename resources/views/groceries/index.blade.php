@@ -9,10 +9,12 @@
             <th>Prijs</th>
             <th>Aantal</th>
             <th>Subtotaal</th>
+            <th>Edit</th>
+            <th>Ver</th>
         </tr>
     
     <?php 
-    foreach($groceries as $item): ?>
+    foreach(App\Models\Grocery::orderBy('name', 'ASC')->get() as $item): ?>
         <tr>
             <td><?= $item->name;  ?></td>
             <td><?= $item->price;  ?></td>

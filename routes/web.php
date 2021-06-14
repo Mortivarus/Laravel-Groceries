@@ -15,6 +15,20 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\GroceryController;
 
+
+/*
+//Possible way to auto-load data when loading URI
+
+Route::get('/groceries', function(){
+    return view('groceries.index', [
+        'groceries'=> App\Models\Grocery::latest()->get()
+    ]);
+});
+
+*/
+
+
+
 Route::get('/', [GroceryController::class, 'index'])->name('groceries.index');
 
 Route::get('/groceries', [GroceryController::class, 'index'])->name('groceries.index');
