@@ -10,7 +10,7 @@
             <th>Aantal</th>
             <th>Subtotaal</th>
             <th>Edit</th>
-            <th>Ver</th>
+            <th>Verwijder</th>
         </tr>
     
     <?php 
@@ -20,6 +20,7 @@
             <td><?= $item->price;  ?></td>
             <td><?= $item->number;  ?></td>
             <td><?= $item->number * $item->price;  ?></td>
+            <td></td>
         </tr>
     <?php endforeach; ?>
 

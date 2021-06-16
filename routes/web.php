@@ -29,17 +29,17 @@ Route::get('/groceries', function(){
 
 
 
-Route::get('/', [GroceryController::class, 'index'])->name('groceries.index');
+Route::get('/', [GroceryController::class, 'index'])->name('groceries.index'); //Land on the index
 
-Route::get('/groceries', [GroceryController::class, 'index'])->name('groceries.index');
+Route::get('/groceries', [GroceryController::class, 'index'])->name('groceries.index'); //Land on the index
 
-Route::get('/groceries/create', [GroceryController::class, 'create'])->name('groceries.create');
+Route::get('/groceries/create', [GroceryController::class, 'create'])->name('groceries.create'); //Land on the 'create' page
 
-Route::post('/groceries', [GroceryController::class, 'store'])->name('groceries.store');
+Route::post('/groceries', [GroceryController::class, 'store'])->name('groceries.store'); //Send a POST request to add the item
 
-Route::get('/groceries/{grocery}/edit', [GroceryController::class, 'edit'])->name('groceries.edit');
+Route::get('/groceries/{grocery}/edit', [GroceryController::class, 'edit'])->name('groceries.edit'); //Land on the 'edit' page of the right item 
 
-Route::put('/groceries/{grocery}', [GroceryController::class, 'update'])->name('groceries.update');
+Route::patch('/groceries/{grocery}', [GroceryController::class, 'update'])->name('groceries.update');
 
 Route::delete('/groceries/{grocery}', [GroceryController::class, 'destroy'])->name('groceries.destroy');
 

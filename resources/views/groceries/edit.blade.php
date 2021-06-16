@@ -9,7 +9,7 @@ Edit the item
 
 <form method="POST" action="/groceries/{{ $grocery->id }}">
     @csrf
-    @method('PUT')
+    @method('PATCH')
     
     <label for="name">Name</label><br>
     <input type="text" id="name" name="name" value="{{ $grocery->name }}"><br>

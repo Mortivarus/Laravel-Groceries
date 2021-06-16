@@ -21,14 +21,6 @@ class GroceryController extends Controller{
             'price' => 'required'
         ]);
 
-        // $grocery = new Grocery();
-
-        // $grocery->name = request('name');
-        // $grocery->number = request('number');
-        // $grocery->price = request('price');
-
-        // $grocery->save();
-
         Grocery::create([
             'name' => request('name'),
             'number' => request('number'),
@@ -39,13 +31,13 @@ class GroceryController extends Controller{
     }
 
     public function edit(Grocery $grocery){
-        $grocery = Grocery::findOrFail($grocery);
+        Grocery::find($grocery);
 
         return view('groceries.edit', compact('grocery'));
     }
 
     public function update(Grocery $grocery){
-        $grocery = Grocery::findOrFail($grocery);
+        
     }
 
     public function destroy(){
