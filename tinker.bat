@@ -1,1 +1,1 @@
-php artisan tinker
+php artisan tinker %*
