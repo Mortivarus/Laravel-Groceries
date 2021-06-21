@@ -20,7 +20,19 @@
             <td><?= $item->price;  ?></td>
             <td><?= $item->number;  ?></td>
             <td><?= $item->number * $item->price;  ?></td>
-            <td></td>
+            <td>
+                <form method="get" action="/groceries/{{ $item->id }}/edit">
+                    @csrf
+                    <input type="submit" value="Click" >
+                </form>
+            </td>
+            <td>
+                <form method="post" action="/groceries/{{ $item->id }}">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Click" >
+                </form>
+            </td>
         </tr>
     <?php endforeach; ?>
 
